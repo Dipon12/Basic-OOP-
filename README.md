@@ -72,3 +72,22 @@ There is also **Accessor Methods** and **Mutator Methods** . Methods that access
 To access inner class method you need to write:
 
 `outer_class_name.inner_class_instance_name.inner_class_method_name`
+
+
+## Inheritance
+
+**See _Basic6(Inheritance).py_ Code**
+
+Lets say, class B is inheriting class A. So:
+
+`class B(A):`
+
+This is called **single level inheritance** .Now if class C inherits class B than:
+
+`class C(B):`
+
+This is called **multilevel level inheritance** . If class F is inheriting class A and class E than:
+
+`class F(A,E):`
+
+This is called **multiple inheritance** . 
