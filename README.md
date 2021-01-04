@@ -33,7 +33,7 @@ In Python, _def init_ method is the **CONSTRUCTOR** method. Constructor is the m
  - Class Namespace
  - Instance/Object Namespace
 
- Instance Namespace is where the instances are created and Class Namespace is where Blueprints are stored. Class Variables are part of Class Namespace. On the other hand, instance variables are part of the Instance Namespace. Hence, value of the variables are changed as follows: 
+Instance Namespace is where the instances are created and Class Namespace is where Blueprints are stored. Class Variables are part of Class Namespace. On the other hand, instance variables are part of the Instance Namespace. Hence, value of the variables are changed as follows: 
  
  ```
  c1 = Car() # c1 is a instance of class Car
@@ -44,3 +44,31 @@ In Python, _def init_ method is the **CONSTRUCTOR** method. Constructor is the m
  Car.wheels = 5 # As variable "wheels" declared in the Class Namespace hence it is called by Class Name instead of Instance name like others. 
  ```
  
+ ## About Methods
+
+ There are 3 types of methods in Pyhton OOP:
+ - Instance Method : Works with instance variable. Parameter 'Self' is included. 
+ - Class Method : Works with class variable. Parameter 'cls' is included.
+ - Static Method : Works with neither class variable nor instance variable. 
+
+```
+def avg_marks(self):                                 # Instance Method (Bcz its parameter is self. So it works with instance variable)
+    return (self.marks1+self.marks2+self.marks3)/3
+
+@classmethod                            #Decorator to indicate that following method is a class method
+def getSchool(cls):                         #Class Method. Bcz Parameter is class and works with class variable.
+    return cls.grad_school
+
+@staticmethod                            # Decorator to indicate the following method is a static method
+def info():                               # Static Method
+    return "This is a Static Method"
+```
+
+There is also **Accessor Methods** and **Mutator Methods** . Methods that accesses the data(value of the variable) but don't changes it of a class are called **Accessor Methods** and those who changes it are called **Mutator Methods**.
+
+
+## Accessing Inner Class
+
+To access inner class method you need to write:
+
+`outer_class_name.inner_class_instance_name.inner_class_method_name`

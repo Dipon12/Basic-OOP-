@@ -17,4 +17,4 @@ print(i1.Fname) # This is how a class variable is called
 print(i2.Fname)
 
 i1.printer() # This is how a class method is called
-i2.printer()
+  

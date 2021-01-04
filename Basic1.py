@@ -13,6 +13,5 @@ com2 = Computer('Ryzen','8GB')
 
 #Computer.config(com1)
 
-print(com1.cpu)
 com1.config()
 com2.config()
