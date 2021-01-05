@@ -37,6 +37,11 @@ class D(C,A):
     def feature5(self):
         print("feature6 is working ...")
 
-#i = B()
 
-i = D()
+    def using_func(self):
+        super().feature1()  # Using Function of Super Class
+
+#i1 = B()
+
+i2 = D()
+i2.using_func()
