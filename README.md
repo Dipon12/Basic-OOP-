@@ -91,3 +91,87 @@ This is called **multilevel level inheritance** . If class F is inheriting class
 `class F(A,E):`
 
 This is called **multiple inheritance** . 
+
+
+## Constructor Inheritance
+
+Suppose there are 2 classes, class A and class B. class B inherits class A. A instance is crearted of class B.
+
+### Situation-1 (class A has __init__ but class B don't)
+
+In such Case, constructor of class A will be executed.
+
+### Situation-2 (class A and class B both have __init__ )
+
+Although both have the constructor, but as instance is created of class B, only __init__ of class B will be executed and __init__ of class B will be ignored.
+
+### Situation-3 (class A and class B both have __init__ but i want to execute __init__ of class A too)
+
+**Use super()**
+
+```
+class B(A):
+    def __init__(self):
+        print("Class B init")
+        super().__init__()
+
+OUTPUT:
+
+Class B init
+Class A init
+```
+
+If order is reversed than:
+
+```
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("Class B init")
+
+OUTPUT:
+
+Class A init
+Class B init
+```
+
+### Situation-4 
+
+Say, there are two more classes, class C and class D. Both have their own __init__ function. class D inherits class A and class C. As this is a multiple inheritance situation what will happen upon the call of super().__init__() ??? Answer is as follows:
+
+```
+class D(A,C):
+
+    def __init__(self):
+        super().__init__()
+        print("class D init")
+
+    def feature5(self):
+        print("feature6 is working ...")
+
+Output: 
+
+class A init
+class D init
+```
+
+If the parameter order is reversed:
+
+```
+class D(C,A):
+
+    def __init__(self):
+        super().__init__()
+        print("class D init")
+
+    def feature5(self):
+        print("feature6 is working ...")
+
+Output: 
+
+class C init
+class D init
+```
+
+**NOTE THAT** the output is changed. It searches for __init__ function from left to right in the parameter list of class D. This is called **Method Resolution Order(MRO)**.
+
