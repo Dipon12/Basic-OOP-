@@ -175,3 +175,17 @@ class D init
 
 **NOTE THAT** the output is changed. It searches for __init__ function from left to right in the parameter list of class D. This is called **Method Resolution Order(MRO)**.
 
+## Polymorphism
+
+Polymorphism is basically doing the same thing for different type/number of inputs. Say we want to calculate area of a room and hence we declared two methods in the same class which have the same name. If two input is provided then the return would be x\*y from first method if one input is provided the return would be x\*x from second method. But the most important thing is both method have the same name but OOP concept made them different. This is also called Method Overloading.
+
+Another Example is say we have three method named speak(). But if input is Dog then method 1 is executed or if input is Human than method 2 is executed.
+
+Types of Polymorphism:
+
+- Duck Typing
+
+### Duck Typing
+
+If a bird walks like a Duck,swims like a Duck, quacks like a Duck than it is probably a Duck. See _Basic9(DuckTyping).py_
+
