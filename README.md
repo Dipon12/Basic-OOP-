@@ -1,4 +1,4 @@
-### About Object
+## Object/Instance and Class
 
 Object has two things:
 - Attribute/Properties - Basically, Data Regarding Object (If Person is object, then persons height,weight) [Variable of the class]
@@ -6,9 +6,11 @@ Object has two things:
 
 **Class is the design for a Object/Instance.**
 
-### Constructor
+We create instances of class.
 
-In Python, _def init_ method is the **CONSTRUCTOR** method. Constructor is the method that is executed whenever the class is called. It is used to store instance variable. 
+## Constructor
+
+In Python, _\_\_def init\_\__ method is the **CONSTRUCTOR** method. Constructor is the method that is executed whenever the class is called. It is used to store instance variable. 
 
  We can think that, each instance is different types of 'variable' of that class. Means, class is the type of instance variable.
 
@@ -74,7 +76,7 @@ To access inner class method you need to write:
 `outer_class_name.inner_class_instance_name.inner_class_method_name`
 
 
-## Inheritance
+# Inheritance
 
 **See _Basic6(Inheritance).py_ Code**
 
@@ -175,17 +177,72 @@ class D init
 
 **NOTE THAT** the output is changed. It searches for __init__ function from left to right in the parameter list of class D. This is called **Method Resolution Order(MRO)**.
 
-## Polymorphism
+# Polymorphism
 
-Polymorphism is basically doing the same thing for different type/number of inputs. Say we want to calculate area of a room and hence we declared two methods in the same class which have the same name. If two input is provided then the return would be x\*y from first method if one input is provided the return would be x\*x from second method. But the most important thing is both method have the same name but OOP concept made them different. This is also called Method Overloading.
+Polymorphism is basically doing the same thing for different type/number of inputs. Say we want to calculate area of a room and hence we declared two methods in the same class which have the same name. If two input is provided then the return would be x\*y from first method if one input is provided the return would be x\*x from second method. But the most important thing is both method have the same name but OOP concept made them different. This is also called Method Overloading. Method Overloading doesn't exists in Python.
 
 Another Example is say we have three method named speak(). But if input is Dog then method 1 is executed or if input is Human than method 2 is executed.
 
 Types of Polymorphism:
 
 - Duck Typing
+- Method Overloading (Does not exists in Python. Do exists in Java and other languages.)
+- Method Overriding
+- Operator Overloading
 
-### Duck Typing
+### 1.Duck Typing
 
-If a bird walks like a Duck,swims like a Duck, quacks like a Duck than it is probably a Duck. See _Basic9(DuckTyping).py_
+If a bird walks like a Duck,swims like a Duck, quacks like a Duck than it is probably a Duck. See _Basic9(DuckTyping).py_ 
 
+### 2.Method Overloading (Not available in Python)
+
+Although not available the concept is described below:
+
+```
+class Rectangle:
+
+    def Area(self,x,y):
+        return x*y
+    
+    def Area(self,x):
+        return x*x
+
+r = Rectangle()
+
+print(r.Area(5,4))
+print(r.Area(5))
+
+Output(Imaginary/According to Concept) :
+
+20
+25
+```
+The first _r.Area(5,4)_ executes the first _Area(self,x,y)_ method. The Second _r.Area(5)_ executes second _Area(self,x)_ methods. As the method _Area()_ is called it first checks the number of input and executed according to it.
+
+
+### 3.Method Overriding
+
+Simply means one method overtaking another method of the same name. 
+
+```
+class A:
+
+    def show(self): 
+        print("From A...")
+
+class B(A):   # class B inheriting class A
+
+    def show(self):  #This show() method Overriding class A show method
+        print("From B...")
+
+
+i = B()
+i.show()
+
+Output:
+
+From B...
+
+```
+
+class B has all the features of class A and as both classes have the method _show()_ but instance is created of class B so the second show() method overrides first show() method.
