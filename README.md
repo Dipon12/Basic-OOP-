@@ -246,3 +246,62 @@ From B...
 ```
 
 class B has all the features of class A and as both classes have the method _show()_ but instance is created of class B so the second show() method overrides first show() method.
+
+# Encapsulation
+
+Encapsulation is a concept that separates each part of a program. Ít is a shield that prevents the code to accesses a unit(Class/Method/Variable) from outside.
+
+Say there are 3 types of encapsulation:
+- Variable Encapsulation
+- Method Encapsulation
+- Class Encapsulation
+
+```
+class Car:
+
+    def __init__(self,speed,color):
+        self.speed = speed
+        self.color = color
+
+    def get_speed(self):
+        return self.__speed
+
+
+c1 = Car(200, 'Red')
+c1.speed = 300
+
+print(c1.get_speed())
+
+Output:
+300
+```
+
+Say we don't want speed variable to be changed like this. We want to make it private. So we change it like this:-
+
+```
+class Car:
+
+    def __init__(self,speed,color):
+        self.__speed = speed # This means private
+        self.__color = color
+
+    def get_speed(self):
+        return self.__speed
+
+
+c1 = Car(200, 'Red')
+c1.speed = 300
+
+print(c1.get_speed())
+
+Output:
+200
+```
+
+So after changing the variable name from speed to __speed it became private and cannot be changed. 
+
+
+
+# Abstraction
+
+Abstraction is a concept that says, you don't need to know how the code works from the outside. The main purpose of abstraction is hiding the unnecessary details from the users. User will provide the input and get the output. There is no need to know how the input is processed. This reduces the complexity.
